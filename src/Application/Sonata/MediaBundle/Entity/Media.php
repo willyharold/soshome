@@ -2,6 +2,7 @@
 
 namespace App\Application\Sonata\MediaBundle\Entity;
 
+use App\Entity\Temoignage;
 use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
 
 /**
@@ -20,6 +21,11 @@ class Media extends BaseMedia
     protected $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Temoignage", mappedBy="image", cascade={"persist", "remove"})
+     */
+    private $temoignage;
+
+    /**
      * Get id.
      *
      * @return int $id
@@ -27,5 +33,22 @@ class Media extends BaseMedia
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getTemoignage(): ?Temoignage
+    {
+        return $this->temoignage;
+    }
+
+    public function setTemoignage(Temoignage $temoignage): self
+    {
+        $this->temoignage = $temoignage;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $temoignage->getImage()) {
+            $temoignage->setImage($this);
+        }
+
+        return $this;
     }
 }
