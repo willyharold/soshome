@@ -12,7 +12,8 @@
     {{ render(controller('App\\Controller\\IndexController::menu')) }}
 
     <!-- Page Title START -->
-    <div class="page-title-section" style="background-image: url(http://via.placeholder.com/1520x290);">
+       {% for contact in contacts %}
+    <div class="page-title-section" style="background-image: url({% path contact.baniere, 'banauxi' %});">
         <div class="container">
             <h1>Contact</h1>
             <ul>
@@ -33,35 +34,35 @@
                     <div class="contact-box">
                         <i class="fa fa-phone-square"></i>
                         <h4>Call Us</h4>
-                        <span>+123 456-78900</span>
+                        <span>{{contact.telephone}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-map"></i>
                         <h4>Visit Us</h4>
-                        <span>New York, NY Sheram 113</span>
+                        <span>{{contact.adresse}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-envelope"></i>
                         <h4>Mail Us</h4>
-                        <span>specthemes@gmail.com</span>
+                        <span>{{contact.email}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-comments-o"></i>
                         <h4>Live Chat</h4>
-                        <span>Chat with Us 24/7</span>
+                        <span>{{contact.live_chat}}</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Contact Boxes END -->
-
+ {% endfor %}
 
 
 
@@ -74,6 +75,8 @@
                 <div class="section-heading-line"></div>
             </div>
             <div class="row mt-50">
+                 {{ form_start(form) }}
+                {{ form_errors(form) }}
                 <div class="contact-form-box">
                     <!-- Form Start -->
                     <form class="contact-form">
