@@ -38,6 +38,16 @@ class Accueil
      */
     private $banniere2;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titreFR;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titreEN;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +98,30 @@ class Accueil
     public function setDescriptionEn(string $descriptionEn): self
     {
         $this->descriptionEn = $descriptionEn;
+
+        return $this;
+    }
+
+    public function getTitreFR(): ?string
+    {
+        return $this->titreFR;
+    }
+
+    public function setTitreFR(string $titreFR): self
+    {
+        $this->titreFR = $titreFR;
+
+        return $this;
+    }
+
+    public function getTitreEN(): ?string
+    {
+        return $this->titreEN;
+    }
+
+    public function setTitreEN(string $titreEN): self
+    {
+        $this->titreEN = $titreEN;
 
         return $this;
     }

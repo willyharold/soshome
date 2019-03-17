@@ -14,9 +14,11 @@ class IndexController extends Controller
     {
          $em = $this->getDoctrine()->getManager();
           $temoignages = $em->getRepository('App:Temoignage')->findBy(array(), array('id' => 'DESC'));
+           $accueils = $em->getRepository('App:Accueil')->findAll();
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
-             "temoignages"=> $temoignages
+             "temoignages"=> $temoignages,
+             "accueils"=> $accueils
         ]);
     }
 
