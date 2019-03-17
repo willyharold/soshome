@@ -1,0 +1,16 @@
+<!-- Clients Carousel START -->
+<div class="section-clients border-top border-bottom">
+    <div class="container">
+        <div class="owl-carousel owl-theme clients" id="clients">
+            {% for partenaire in partenaires %}
+            <div class="item">
+                {% media partenaire.image, 'big' %}
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+<!-- Clients Carousel END -->

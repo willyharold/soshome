@@ -26,4 +26,14 @@ class IndexController extends Controller
     {
         return $this->render('footer.html.twig');
     }
+
+    public function partenaire()
+
+    {
+        $em = $this->getDoctrine()->getManager();
+        $partenaires = $em->getRepository('App:Partenaire')->findAll();
+
+        return $this->render('partenaire.html.twig',["partenaires"=> $partenaires]);
+    }
+
 }
