@@ -5,6 +5,9 @@ sonata_media:
         gallery: App\Application\Sonata\MediaBundle\Entity\Gallery
         gallery_has_media: App\Application\Sonata\MediaBundle\Entity\GalleryHasMedia
     default_context: default
+    providers:
+        image:
+            resizer: sonata.media.resizer.square
     contexts:
         default:
             providers:
@@ -17,6 +20,31 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
+
+        accueil:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                banniere1: { width: 1520 , height: 420 , quality: 70}
+                banniere2: { width: 1520 , height: 500 , quality: 70}
+
+        partenaire:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big: { width: 158 , height: 58 , quality: 70}
+
+        temoignage:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big: { width: 80 , height: 80 , quality: 70}
+
+        equipe:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big: { width: 360 , height: 300 , quality: 70}
 
     cdn:
         server:

@@ -33,7 +33,7 @@ class Equipe
     private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="equipe", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      */
     private $image;
 

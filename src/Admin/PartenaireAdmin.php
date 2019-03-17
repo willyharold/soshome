@@ -39,7 +39,7 @@ final class PartenaireAdmin extends AbstractAdmin
     {
         $formMapper
 			->add('nom')
-            ->add('image',MediaType::class,["context"=>"default","provider"=>"sonata.media.provider.image"])
+            ->add('image',MediaType::class,["context"=>"partenaire","provider"=>"sonata.media.provider.image"])
 
         ;
     }

@@ -71,3 +71,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Newsletter }
         public: true
+
+    admin.equipe:
+        class: App\Admin\EquipeAdmin
+        arguments: [~, App\Entity\Equipe, App\Controller\EquipeAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Equipe }
+        public: true

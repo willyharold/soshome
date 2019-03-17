@@ -5,7 +5,7 @@
 {% block body %}
 
     <!-- Preloader Start-->
-        {% for accueil in accueils %}
+
     <div id="preloader">
         <div class="row loader">
             <div class="loader-icon"></div>
@@ -14,10 +14,11 @@
     <!-- Preloader End ici qu'il faut rajouter le menu -->
 
     {{ render(controller('App\\Controller\\IndexController::menu')) }}
+    {% for accueil in accueils %}
 
     <!-- Main Image Section START -->
  
-    <div class="main-image-section" style="background-image:  {% media accueil.banniere1, 'big' %}">
+    <div class="main-image-section" style="background-image: url({% path accueil.banniere1, 'banniere1' %})">
         <!-- Overlay Start -->
         <div class="medium-overlay"></div>
         <!-- Overlay End -->
@@ -29,10 +30,10 @@
                         
                         <div class="center-holder">
                             <h2>
-                               {{accueil.titreFR}}
+                               {{accueil.titreFr}}
                             </h2>
                             <p>
-                                {{accueil.descriptionFR}}
+                                {{accueil.descriptionFr}}
                             </p>
                             <div class="mt-30">
                                 <a href="#contact" class="primary-button button-md">Lean More</a>
@@ -94,7 +95,7 @@
 
 
     <!-- Background Section START -->
-    <div class="section-block-bg" style="background-image: {% media accueil.banniere2, 'big' %}">
+    <div class="section-block-bg" style="background-image: url({% path accueil.banniere2, 'banniere2' %})">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-offset-6">
@@ -142,16 +143,16 @@
                 <div class="testmonial-item">
                     {% for temoignage in temoignages %}
                     <div class="testmonial-item-bxx">
-                        <p> {{temoignage.descriptionFR}}</p>
+                        <p> {{temoignage.descriptionFr}}</p>
                         <div class="testmonial-arrow"> </div>
                     </div>
                     <div class="testmonial-item-bxx-img">
                         <div class="testmonial-item-img">
-                            <img src="{% path temoignage.image, 'big' %}" alt="img">
+                                {% media temoignage.image, 'big' %}
                         </div>
                         <div class="testmonial-item-name">
                             <h4>{{temoignage.nom}}</h4>
-                            <span>{{temoignage.titreFR}}</span>
+                            <span>{{temoignage.titreFr}}</span>
                         </div>
                     </div>
                       {% endfor %}

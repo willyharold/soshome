@@ -29,12 +29,12 @@ class Accueil
     private $descriptionEn;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media",  cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media",  cascade={"all"})
      */
     private $banniere1;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      */
     private $banniere2;
 

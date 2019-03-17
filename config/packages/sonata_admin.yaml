@@ -15,6 +15,7 @@ sonata_admin:
                     - admin.contact
                     - admin.newsletter
                     - admin.message
+                    - admin.equipe
 
 
 

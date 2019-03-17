@@ -35,6 +35,7 @@ final class TemoignageAdmin extends AbstractAdmin
             ->add('titreEn')
             ->add('descriptionFr')
             ->add('descriptionEn')
+            ->add('image')
 			->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -52,7 +53,7 @@ final class TemoignageAdmin extends AbstractAdmin
             ->add('titreEn')
             ->add('descriptionFr',TextType::class)
             ->add('descriptionEn')
-            ->add('image',MediaType::class,["context"=>"default","provider"=>"sonata.media.provider.image"])
+            ->add('image',MediaType::class,["context"=>"temoignage","provider"=>"sonata.media.provider.image"])
 			;
     }
 

@@ -9,17 +9,20 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\MediaBundle\Form\Type\MediaType;
 
-final class AccueilAdmin extends AbstractAdmin
+final class EquipeAdmin extends AbstractAdmin
 {
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
 			->add('id')
-			->add('descriptionFr')
-			->add('descriptionEn')
-            ->add('banniere1')
-            ->add('banniere2')
+			->add('nom')
+			->add('poste')
+			->add('description')
+			->add('facebook')
+			->add('linkdin')
+			->add('instagram')
+			->add('skype')
 			;
     }
 
@@ -27,10 +30,14 @@ final class AccueilAdmin extends AbstractAdmin
     {
         $listMapper
 			->add('id')
-			->add('descriptionFr')
-			->add('descriptionEn')
-            ->add('banniere1')
-            ->add('banniere2')
+			->add('nom')
+			->add('poste')
+			->add('description')
+			->add('facebook')
+			->add('linkdin')
+			->add('instagram')
+			->add('skype')
+            ->add('image')
 			->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -43,13 +50,15 @@ final class AccueilAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-		    
-                ->add('titreEN')
-                ->add('titreFR')
-                ->add('descriptionFr')
-                ->add('descriptionEn')
-                ->add('banniere1',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
-                ->add('banniere2',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
+			->add('id')
+			->add('nom')
+			->add('poste')
+			->add('description')
+			->add('facebook')
+			->add('linkdin')
+			->add('instagram')
+			->add('skype')
+            ->add('image',MediaType::class,["context"=>"equipe","provider"=>"sonata.media.provider.image"])
 
         ;
     }
@@ -58,10 +67,14 @@ final class AccueilAdmin extends AbstractAdmin
     {
         $showMapper
 			->add('id')
-			->add('descriptionFr')
-			->add('descriptionEn')
-            ->add('banniere1')
-            ->add('banniere2')
+			->add('nom')
+			->add('poste')
+			->add('description')
+			->add('facebook')
+			->add('linkdin')
+			->add('instagram')
+			->add('skype')
+            ->add('image')
 			;
     }
 }
