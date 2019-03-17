@@ -16,7 +16,7 @@ class MessageType extends AbstractType
             ->add('email')
             ->add('objet')
             ->add('description')
-            ->add('soumettre', 'submit')
+           
         ;
     }
 

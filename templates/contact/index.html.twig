@@ -75,31 +75,39 @@
                 <div class="section-heading-line"></div>
             </div>
             <div class="row mt-50">
-                 {{ form_start(form) }}
-                {{ form_errors(form) }}
+                
                 <div class="contact-form-box">
                     <!-- Form Start -->
+                     
                     <form class="contact-form">
+                         {{ form_start(form) }}
+                {{ form_errors(form) }}
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" name="name" placeholder="Name">
+                           {{ form_errors(form.nom) }}
+                           {{ form_widget(form.nom) }}
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            <input type="email" name="email" placeholder="E-mail">
+                            {{ form_errors(form.email) }}
+                           {{ form_widget(form.email) }}
                         </div>
 
                         <div class="col-md-12">
-                            <input type="text" name="subject" placeholder="Subject">
+                           {{ form_errors(form.objet) }}
+                           {{ form_widget(form.objet) }}
                         </div>
 
                         <div class="col-md-12">
-                            <textarea name="message" placeholder="Message"></textarea>
+                           {{ form_errors(form.description) }}
+                           {{ form_widget(form.description) }}
                         </div>
                         <div class="col-md-12">
                             <div class="center-holder">
                                 <button type="submit">Envoyer Message</button>
                             </div>
                         </div>
+                         {{ form_end(form) }}
                     </form>
+                    
                     <!-- Form End -->
                 </div>
             </div>
