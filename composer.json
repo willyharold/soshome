@@ -9,6 +9,7 @@
         "friendsofsymfony/user-bundle": "^2.1",
         "sensio/framework-extra-bundle": "^5.1",
         "sonata-project/admin-bundle": "^3.43",
+        "sonata-project/doctrine-orm-admin-bundle": "^3.8",
         "sonata-project/media-bundle": "^3.16",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "3.4.*",
