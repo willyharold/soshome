@@ -36,3 +36,24 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Temoignage }
         public: true
+
+    admin.partenaire:
+        class: App\Admin\PartenaireAdmin
+        arguments: [~, App\Entity\Partenaire, App\Controller\PartenaireAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Partenaire }
+        public: true
+
+    admin.contact:
+        class: App\Admin\ContactAdmin
+        arguments: [~, App\Entity\Contact, App\Controller\ContactAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Contact }
+        public: true
+
+    admin.accueil:
+        class: App\Admin\AccueilAdmin
+        arguments: [~, App\Entity\Accueil, App\Controller\AccueilAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Accueil }
+        public: true

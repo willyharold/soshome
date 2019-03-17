@@ -38,14 +38,20 @@ class Contact
     private $live_chat;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="contact", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      */
     private $baniere;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="string", length=255)
      */
-    private $description;
+    private $latitude;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $longitude;
+
 
     public function getId(): ?int
     {
@@ -112,15 +118,28 @@ class Contact
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getLatitude(): ?string
     {
-        return $this->description;
+        return $this->latitude;
     }
 
-    public function setDescription(string $description): self
+    public function setLatitude(string $latitude): self
     {
-        $this->description = $description;
+        $this->latitude = $latitude;
 
         return $this;
     }
+
+    public function getLongitude(): ?string
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(string $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
 }

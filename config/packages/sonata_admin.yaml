@@ -10,6 +10,9 @@ sonata_admin:
                 icon: '<i class="fa fa-cog"></i>'
                 items:
                     - admin.temoignage
+                    - admin.partenaire
+                    - admin.accueil
+                    - admin.contact
 
 
 

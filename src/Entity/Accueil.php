@@ -17,37 +17,32 @@ class Accueil
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="banniere2", cascade={"persist", "remove"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionFr;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionEn;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media",  cascade={"persist", "remove"})
      */
     private $banniere1;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="accueil", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"persist", "remove"})
      */
-    private $banniere3;
+    private $banniere2;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
 
     public function getBanniere1(): ?Media
     {
@@ -61,14 +56,38 @@ class Accueil
         return $this;
     }
 
-    public function getBanniere3(): ?Media
+    public function getBanniere2(): ?Media
     {
-        return $this->banniere3;
+        return $this->banniere2;
     }
 
-    public function setBanniere3(?Media $banniere3): self
+    public function setBanniere2(?Media $banniere2): self
     {
-        $this->banniere3 = $banniere3;
+        $this->banniere3 = $banniere2;
+
+        return $this;
+    }
+
+    public function getDescriptionFr(): ?string
+    {
+        return $this->descriptionFr;
+    }
+
+    public function setDescriptionFr(string $descriptionFr): self
+    {
+        $this->descriptionFr = $descriptionFr;
+
+        return $this;
+    }
+
+    public function getDescriptionEn(): ?string
+    {
+        return $this->descriptionEn;
+    }
+
+    public function setDescriptionEn(string $descriptionEn): self
+    {
+        $this->descriptionEn = $descriptionEn;
 
         return $this;
     }
