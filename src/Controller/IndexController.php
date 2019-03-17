@@ -12,8 +12,11 @@ class IndexController extends Controller
      */
     public function index()
     {
+         $em = $this->getDoctrine()->getManager();
+          $temoignages = $em->getRepository('App:Temoignage')->findBy(array(), array('id' => 'DESC'));
         return $this->render('index/index.html.twig', [
             'controller_name' => 'IndexController',
+             "temoignages"=> $temoignages
         ]);
     }
 
@@ -32,6 +35,7 @@ class IndexController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $partenaires = $em->getRepository('App:Partenaire')->findAll();
+        
 
         return $this->render('partenaire.html.twig',["partenaires"=> $partenaires]);
     }

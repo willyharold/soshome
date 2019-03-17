@@ -138,76 +138,26 @@
             </div>
             <div class="owl-carousel owl-theme mt-30" id="testmonial-item">
                 <div class="testmonial-item">
+                    {% for temoignage in temoignages %}
                     <div class="testmonial-item-bxx">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris.</p>
+                        <p> {{temoignage.descriptionFR}}</p>
                         <div class="testmonial-arrow"> </div>
                     </div>
                     <div class="testmonial-item-bxx-img">
                         <div class="testmonial-item-img">
-                            <img src="http://via.placeholder.com/80x80" alt="img">
+                            <img src="{% path temoignage.image, 'big' %}" alt="img">
                         </div>
                         <div class="testmonial-item-name">
-                            <h4>Henry Ford</h4>
-                            <span>Financial Analyst</span>
+                            <h4>{{temoignage.nom}}</h4>
+                            <span>{{temoignage.titreFR}}</span>
                         </div>
                     </div>
+                      {% endfor %}
                 </div>
 
-                <div class="testmonial-item">
-                    <div class="testmonial-item-bxx">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris.</p>
-                        <div class="testmonial-arrow"> </div>
-                    </div>
-                    <div class="testmonial-item-bxx-img">
-                        <div class="testmonial-item-img">
-                            <img src="http://via.placeholder.com/80x80" alt="img">
-                        </div>
-                        <div class="testmonial-item-name">
-                            <h4>Jason Smith</h4>
-                            <span>Consultant</span>
-                        </div>
-                    </div>
-                </div>
+              
 
-                <div class="testmonial-item">
-                    <div class="testmonial-item-bxx">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris.</p>
-                        <div class="testmonial-arrow"> </div>
-                    </div>
-                    <div class="testmonial-item-bxx-img">
-                        <div class="testmonial-item-img">
-                            <img src="http://via.placeholder.com/80x80" alt="img">
-                        </div>
-                        <div class="testmonial-item-name">
-                            <h4>Jasmin Priestley</h4>
-                            <span>Company Owner</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testmonial-item">
-                    <div class="testmonial-item-bxx">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris.</p>
-                        <div class="testmonial-arrow"> </div>
-                    </div>
-                    <div class="testmonial-item-bxx-img">
-                        <div class="testmonial-item-img">
-                            <img src="http://via.placeholder.com/80x80" alt="img">
-                        </div>
-                        <div class="testmonial-item-name">
-                            <h4>Michelle Stacey</h4>
-                            <span>Consultant</span>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </div>
     </div>
