@@ -3,6 +3,8 @@
 namespace App\Application\Sonata\MediaBundle\Entity;
 
 use App\Entity\Accueil;
+use App\Entity\Contact;
+use App\Entity\Partenaire;
 use App\Entity\Temoignage;
 use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
 
@@ -35,6 +37,16 @@ class Media extends BaseMedia
      * @ORM\OneToOne(targetEntity="App\Entity\Accueil", mappedBy="banniere3", cascade={"persist", "remove"})
      */
     private $accueil;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Partenaire", mappedBy="image", cascade={"persist", "remove"})
+     */
+    private $partenaire;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Contact", mappedBy="baniere", cascade={"persist", "remove"})
+     */
+    private $contact;
 
     /**
      * Get id.
@@ -94,6 +106,42 @@ class Media extends BaseMedia
         $newBanniere3 = $accueil === null ? null : $this;
         if ($newBanniere3 !== $accueil->getBanniere3()) {
             $accueil->setBanniere3($newBanniere3);
+        }
+
+        return $this;
+    }
+
+    public function getPartenaire(): ?Partenaire
+    {
+        return $this->partenaire;
+    }
+
+    public function setPartenaire(?Partenaire $partenaire): self
+    {
+        $this->partenaire = $partenaire;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newImage = $partenaire === null ? null : $this;
+        if ($newImage !== $partenaire->getImage()) {
+            $partenaire->setImage($newImage);
+        }
+
+        return $this;
+    }
+
+    public function getContact(): ?Contact
+    {
+        return $this->contact;
+    }
+
+    public function setContact(?Contact $contact): self
+    {
+        $this->contact = $contact;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newBaniere = $contact === null ? null : $this;
+        if ($newBaniere !== $contact->getBaniere()) {
+            $contact->setBaniere($newBaniere);
         }
 
         return $this;
