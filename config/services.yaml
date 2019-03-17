@@ -57,3 +57,17 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Accueil }
         public: true
+
+    admin.message:
+        class: App\Admin\MessageAdmin
+        arguments: [~, App\Entity\Message, App\Controller\MessageAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Message }
+        public: true
+
+    admin.newsletter:
+        class: App\Admin\NewsletterAdmin
+        arguments: [~, App\Entity\Newsletter, App\Controller\NewsletterAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Newsletter }
+        public: true

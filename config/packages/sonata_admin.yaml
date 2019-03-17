@@ -13,6 +13,8 @@ sonata_admin:
                     - admin.partenaire
                     - admin.accueil
                     - admin.contact
+                    - admin.newsletter
+                    - admin.message
 
 
 
