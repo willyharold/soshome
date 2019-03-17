@@ -1,4 +1,5 @@
 sonata_media:
+    db_driver: doctrine_orm
     class:
         media: App\Application\Sonata\MediaBundle\Entity\Media
         gallery: App\Application\Sonata\MediaBundle\Entity\Gallery
@@ -19,7 +20,7 @@ sonata_media:
 
     cdn:
         server:
-            path: /upload/media
+            path: /soshome/public/upload/media
 
     filesystem:
         local:

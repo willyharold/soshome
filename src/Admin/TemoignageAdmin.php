@@ -7,6 +7,8 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\MediaBundle\Form\Type\MediaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 final class TemoignageAdmin extends AbstractAdmin
 {
@@ -16,9 +18,12 @@ final class TemoignageAdmin extends AbstractAdmin
         $datagridMapper
 			->add('id')
 			->add('nom')
-			->add('titre')
-			->add('description')
-			;
+			->add('titreFr')
+            ->add('titreEn')
+            ->add('descriptionFr')
+            ->add('descriptionEn')
+
+        ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
@@ -26,8 +31,10 @@ final class TemoignageAdmin extends AbstractAdmin
         $listMapper
 			->add('id')
 			->add('nom')
-			->add('titre')
-			->add('description')
+            ->add('titreFr')
+            ->add('titreEn')
+            ->add('descriptionFr')
+            ->add('descriptionEn')
 			->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -40,10 +47,12 @@ final class TemoignageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
 			->add('nom')
-			->add('titre')
-			->add('description')
+            ->add('titreFr')
+            ->add('titreEn')
+            ->add('descriptionFr',TextType::class)
+            ->add('descriptionEn')
+            ->add('image',MediaType::class,["context"=>"default","provider"=>"sonata.media.provider.image"])
 			;
     }
 
@@ -51,9 +60,11 @@ final class TemoignageAdmin extends AbstractAdmin
     {
         $showMapper
 			->add('id')
-			->add('nom')
-			->add('titre')
-			->add('description')
-			;
+            ->add('titreFr')
+            ->add('titreEn')
+            ->add('descriptionFr')
+            ->add('descriptionEn')
+            ->add('image')
+        ;
     }
 }
