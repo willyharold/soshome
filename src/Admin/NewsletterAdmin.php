@@ -36,7 +36,7 @@ final class NewsletterAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
+			
 			->add('email')
 			;
     }
