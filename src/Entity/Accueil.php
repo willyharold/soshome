@@ -73,7 +73,7 @@ class Accueil
 
     public function setBanniere2(?Media $banniere2): self
     {
-        $this->banniere3 = $banniere2;
+        $this->banniere2 = $banniere2;
 
         return $this;
     }

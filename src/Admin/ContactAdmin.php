@@ -54,7 +54,7 @@ final class ContactAdmin extends AbstractAdmin
 			->add('live_chat')
 			->add('latitude')
 			->add('longitude')
-            ->add('baniere',MediaType::class,["context"=>"default","provider"=>"sonata.media.provider.image"])
+            ->add('baniere',MediaType::class,["context"=>"banauxi","provider"=>"sonata.media.provider.image"])
 
         ;
     }

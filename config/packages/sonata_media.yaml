@@ -46,6 +46,12 @@ sonata_media:
             formats:
                 big: { width: 360 , height: 300 , quality: 70}
 
+        banauxi:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big: { width: 1520 , height: 290 , quality: 70}
+
     cdn:
         server:
             path: /soshome/public/upload/media
