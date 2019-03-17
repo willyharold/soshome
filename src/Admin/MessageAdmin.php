@@ -42,7 +42,7 @@ final class MessageAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
+			
 			->add('nom')
 			->add('email')
 			->add('objet')

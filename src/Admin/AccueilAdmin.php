@@ -43,7 +43,7 @@ final class AccueilAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
+		
 			->add('descriptionFr')
 			->add('descriptionEn')
             ->add('banniere1',MediaType::class,["context"=>"default","provider"=>"sonata.media.provider.image"])
