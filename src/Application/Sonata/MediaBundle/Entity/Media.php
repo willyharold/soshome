@@ -22,21 +22,6 @@ class Media extends BaseMedia
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Temoignage", mappedBy="image", cascade={"persist", "remove"})
-     */
-    private $temoignage;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Accueil", mappedBy="banniere1", cascade={"persist", "remove"})
-     */
-    private $banniere2;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Accueil", mappedBy="banniere3", cascade={"persist", "remove"})
-     */
-    private $accueil;
-
-    /**
      * Get id.
      *
      * @return int $id
@@ -46,56 +31,5 @@ class Media extends BaseMedia
         return $this->id;
     }
 
-    public function getTemoignage(): ?Temoignage
-    {
-        return $this->temoignage;
-    }
 
-    public function setTemoignage(Temoignage $temoignage): self
-    {
-        $this->temoignage = $temoignage;
-
-        // set the owning side of the relation if necessary
-        if ($this !== $temoignage->getImage()) {
-            $temoignage->setImage($this);
-        }
-
-        return $this;
-    }
-
-    public function getBanniere2(): ?Accueil
-    {
-        return $this->banniere2;
-    }
-
-    public function setBanniere2(?Accueil $banniere2): self
-    {
-        $this->banniere2 = $banniere2;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newBanniere1 = $banniere2 === null ? null : $this;
-        if ($newBanniere1 !== $banniere2->getBanniere1()) {
-            $banniere2->setBanniere1($newBanniere1);
-        }
-
-        return $this;
-    }
-
-    public function getAccueil(): ?Accueil
-    {
-        return $this->accueil;
-    }
-
-    public function setAccueil(?Accueil $accueil): self
-    {
-        $this->accueil = $accueil;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newBanniere3 = $accueil === null ? null : $this;
-        if ($newBanniere3 !== $accueil->getBanniere3()) {
-            $accueil->setBanniere3($newBanniere3);
-        }
-
-        return $this;
-    }
 }

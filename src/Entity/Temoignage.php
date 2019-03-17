@@ -22,21 +22,33 @@ class Temoignage
      */
     private $nom;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $titre;
+
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $description;
-
-    /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="temoignage", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $image;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titreFr;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $titreEn;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionFr;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $descriptionEn;
 
     public function getId(): ?int
     {
@@ -55,30 +67,6 @@ class Temoignage
         return $this;
     }
 
-    public function getTitre(): ?string
-    {
-        return $this->titre;
-    }
-
-    public function setTitre(string $titre): self
-    {
-        $this->titre = $titre;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
     public function getImage(): ?Media
     {
         return $this->image;
@@ -87,6 +75,54 @@ class Temoignage
     public function setImage(Media $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTitreFr(): ?string
+    {
+        return $this->titreFr;
+    }
+
+    public function setTitreFr(string $titreFr): self
+    {
+        $this->titreFr = $titreFr;
+
+        return $this;
+    }
+
+    public function getTitreEn(): ?string
+    {
+        return $this->titreEn;
+    }
+
+    public function setTitreEn(string $titreEn): self
+    {
+        $this->titreEn = $titreEn;
+
+        return $this;
+    }
+
+    public function getDescriptionFr(): ?string
+    {
+        return $this->descriptionFr;
+    }
+
+    public function setDescriptionFr(string $descriptionFr): self
+    {
+        $this->descriptionFr = $descriptionFr;
+
+        return $this;
+    }
+
+    public function getDescriptionEn(): ?string
+    {
+        return $this->descriptionEn;
+    }
+
+    public function setDescriptionEn(string $descriptionEn): self
+    {
+        $this->descriptionEn = $descriptionEn;
 
         return $this;
     }
