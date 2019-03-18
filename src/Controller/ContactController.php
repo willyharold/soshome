@@ -6,6 +6,7 @@ use App\Entity\Message;
 use App\Form\MessageType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends Controller
@@ -25,8 +26,12 @@ class ContactController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $task = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($message);
+            $em->flush();
+            $session = new Session();
+            $session->getFlashBag()->add("message","Votre message a bien été envoyé");
 
-            return $this->redirectToRoute('index');
         }
         return $this->render('contact/index.html.twig', [
             'controller_name' => 'ContactController',

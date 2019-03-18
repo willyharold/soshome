@@ -13,12 +13,12 @@
 
     <!-- Page Title START -->
        {% for contact in contacts %}
-    <div class="page-title-section" style="background-image: url({% path contact.baniere, 'banauxi' %});">
+    <div class="page-title-section" style="background-image: url({% path contact.baniere, 'big' %});">
         <div class="container">
             <h1>Contact</h1>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact-2.html">Contact</a></li>
+                <li><a href="{{ path('index') }}">Home</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
             </ul>
         </div>
     </div>
@@ -33,29 +33,29 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-phone-square"></i>
-                        <h4>Call Us</h4>
+                        <h4>Contactez-nous</h4>
                         <span>{{contact.telephone}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-map"></i>
-                        <h4>Visit Us</h4>
+                        <h4>Visitez-nous</h4>
                         <span>{{contact.adresse}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-envelope"></i>
-                        <h4>Mail Us</h4>
+                        <h4>Ecrivez-nous</h4>
                         <span>{{contact.email}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-comments-o"></i>
-                        <h4>Live Chat</h4>
-                        <span>{{contact.live_chat}}</span>
+                        <h4>chat en direct</h4>
+                        <span>{{contact.liveChat}}</span>
                     </div>
                 </div>
             </div>
@@ -70,34 +70,35 @@
     <div class="section-block">
         <div class="container">
             <div class="section-heading center-holder">
-                <span>Get in Touch</span>
-                <h3>Let's Talk about Your Business</h3>
+                <span>Entrer en contact</span>
+                <h3>Parlons de votre entreprise</h3>
                 <div class="section-heading-line"></div>
+
             </div>
             <div class="row mt-50">
-                
+                {% for flashMessage in app.session.flashbag.get('message') %}
+
+                <div class="alert alert-success" role="alert">
+                    {{ flashMessage }}
+                </div>
+                {% endfor %}
                 <div class="contact-form-box">
                     <!-- Form Start -->
                      
-                    <form class="contact-form">
-                         {{ form_start(form) }}
-                {{ form_errors(form) }}
+                         {{ form_start(form,{'attr' :  {'class': 'contact-form'}} ) }}
+
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                           {{ form_errors(form.nom) }}
                            {{ form_widget(form.nom) }}
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{ form_errors(form.email) }}
                            {{ form_widget(form.email) }}
                         </div>
 
                         <div class="col-md-12">
-                           {{ form_errors(form.objet) }}
                            {{ form_widget(form.objet) }}
                         </div>
 
                         <div class="col-md-12">
-                           {{ form_errors(form.description) }}
                            {{ form_widget(form.description) }}
                         </div>
                         <div class="col-md-12">
@@ -106,8 +107,7 @@
                             </div>
                         </div>
                          {{ form_end(form) }}
-                    </form>
-                    
+
                     <!-- Form End -->
                 </div>
             </div>

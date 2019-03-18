@@ -8,6 +8,8 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\MediaBundle\Form\Type\MediaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 
 final class ContactAdmin extends AbstractAdmin
 {
@@ -48,8 +50,8 @@ final class ContactAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('telephone')
-			->add('email')
+			->add('telephone',TelType::class)
+			->add('email',EmailType::class)
 			->add('adresse')
 			->add('live_chat')
 			->add('latitude')
