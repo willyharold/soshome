@@ -51,6 +51,13 @@ sonata_media:
                 - sonata.media.provider.image
             formats:
                 big: { width: 1520 , height: 290 , quality: 70}
+                
+        service:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                banniere: { width: 1520 , height: 290 , quality: 70}
+                image: { width: 847 , height: 456 , quality: 70}
 
     cdn:
         server:

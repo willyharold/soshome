@@ -7,6 +7,7 @@ use App\Entity\Accueil;
 use App\Entity\Contact;
 use App\Entity\Equipe;
 use App\Entity\Partenaire;
+use App\Entity\Service;
 use App\Entity\Temoignage;
 use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
 
@@ -25,6 +26,11 @@ class Media extends BaseMedia
      */
     protected $id;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Service", mappedBy="banniere", cascade={"persist", "remove"})
+     */
+    private $service;
+
 
     /**
      * Get id.
@@ -34,6 +40,24 @@ class Media extends BaseMedia
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getService(): ?Service
+    {
+        return $this->service;
+    }
+
+    public function setService(?Service $service): self
+    {
+        $this->service = $service;
+
+        // set (or unset) the owning side of the relation if necessary
+        $newBanniere = $service === null ? null : $this;
+        if ($newBanniere !== $service->getBanniere()) {
+            $service->setBanniere($newBanniere);
+        }
+
+        return $this;
     }
 
 }

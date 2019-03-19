@@ -13,7 +13,8 @@
 
 
     <!-- Page Title START -->
-    <div class="page-title-section" style="background-image: url(http://via.placeholder.com/1520x290);">
+     {% for service in services %}
+    <div class="page-title-section" style="background-image: url({% path service.banniere, 'banniere' %});">
         <div class="container">
             <h1>Service Detail</h1>
             <ul>
@@ -22,6 +23,7 @@
             </ul>
         </div>
     </div>
+        
     <!-- Page Title END -->
 
 
@@ -32,22 +34,11 @@
         <div class="container">
             <div class="row">
                 <!-- Left Side START -->
-                <div class="col-md-3 col-sm-4 col-xs-12">
+                 <div class="col-md-3 col-sm-4 col-xs-12">
                     <div class="services-single-left-box">
 
                         <!-- Vertical Menu START -->
-                        <div class="services-single-left-heading">
-                            <h4>All Services</h4>
-                        </div>
-                        <div class="services-single-menu mt-30">
-                            <ul>
-                                <li class="services-active"><a href="#">Financial Services Consulting</a></li>
-                                <li><a href="#">Consumer Product Consulting</a></li>
-                                <li><a href="#">Global Consumer insights</a></li>
-                                <li><a href="#">Independent contractor</a></li>
-                                <li><a href="#">Professional Advisor</a></li>
-                            </ul>
-                        </div>
+                        
                         <!-- Vertical Menu END -->
 
                         <div class="services-single-left-heading mt-40">
@@ -78,7 +69,7 @@
                 <!-- Right Side START -->
                 <div class="col-md-9 col-sm-8 col-xs-12">
                     <div class="services-single-right">
-                        <img src="http://via.placeholder.com/847x456" class="rounded-border" alt="img">
+                         {% media service.image, 'image' %}
                         <div class="text-content-big mt-20">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -87,7 +78,8 @@
                                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
-
+                        
+{% endfor %}
                         <div class="row mt-30">
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="pr-15-md">
@@ -185,6 +177,8 @@
                         </div>
 
                     </div>
+                    
+                    
                 </div>
                 <!-- Right Side END -->
             </div>
@@ -224,6 +218,7 @@
                     <img src="http://via.placeholder.com/158x58" alt="partner-image">
                 </div>
             </div>
+           
         </div>
     </div>
     <!-- Clients Carousel END -->
