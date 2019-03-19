@@ -183,67 +183,31 @@
                 <div class="section-heading-line"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
             </div>
+            
             <div class="row mt-50">
+                  {% for equipe in equipes %}
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="team-member">
                         <div class="team-member-img">
-                            <img src="http://via.placeholder.com/360x300" alt="img">
+                              {% media equipe.image, 'big' %}
                         </div>
                         <div class="team-member-text">
-                            <h4><a href="#">Jack Semper</a></h4>
-                            <span>Majority Owner</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h4><a href="#">{{equipe.nom}}</a></h4>
+                            <span>{{equipe.poste}}</span>
+                            <p>{{equipe.description}}</p>
 
                             <ul>
-                                <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li> <a href="{{equipe.facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li> <a href="{{equipe.linkdin}}"><i class="fa fa-twitter"></i></a></li>
+                                <li> <a href="{{equipe.instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                <li> <a href="{{equipe.skype}}"><i class="fa fa-skype"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="team-member">
-                        <div class="team-member-img">
-                            <img src="http://via.placeholder.com/360x300" alt="img">
-                        </div>
-                        <div class="team-member-text">
-                            <h4><a href="#">Ann Smith</a></h4>
-                            <span>Finance Lead</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <ul>
-                                <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="team-member">
-                        <div class="team-member-img">
-                            <img src="http://via.placeholder.com/360x300" alt="img">
-                        </div>
-                        <div class="team-member-text">
-                            <h4><a href="#">Philip Wilson</a></h4>
-                            <span>Networking Lead</span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <ul>
-                                <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li> <a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                        </div>
+               
                     </div>
                 </div>
             </div>

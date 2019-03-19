@@ -12,8 +12,11 @@ class AboutController extends Controller
      */
     public function index()
     {
+         $em = $this->getDoctrine()->getManager();
+         $equipes = $em->getRepository('App:Equipe')->findAll();
         return $this->render('about/index.html.twig', [
             'controller_name' => 'AboutController',
+              "equipes"=> $equipes
         ]);
     }
 }

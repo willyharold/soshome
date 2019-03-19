@@ -50,7 +50,6 @@ final class EquipeAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('id')
 			->add('nom')
 			->add('poste')
 			->add('description')
