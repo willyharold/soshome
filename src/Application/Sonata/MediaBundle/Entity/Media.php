@@ -27,12 +27,6 @@ class Media extends BaseMedia
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Service", mappedBy="banniere", cascade={"persist", "remove"})
-     */
-    private $service;
-
-
-    /**
      * Get id.
      *
      * @return int $id
@@ -40,24 +34,6 @@ class Media extends BaseMedia
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getService(): ?Service
-    {
-        return $this->service;
-    }
-
-    public function setService(?Service $service): self
-    {
-        $this->service = $service;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newBanniere = $service === null ? null : $this;
-        if ($newBanniere !== $service->getBanniere()) {
-            $service->setBanniere($newBanniere);
-        }
-
-        return $this;
     }
 
 }

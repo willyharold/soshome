@@ -28,12 +28,12 @@ class Service
     private $descriptionEn;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="service", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"persist", "remove"})
      */
     private $banniere;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", inversedBy="service", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity="App\Application\Sonata\MediaBundle\Entity\Media", cascade={"persist", "remove"})
      */
     private $image;
 

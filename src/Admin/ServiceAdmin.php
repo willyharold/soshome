@@ -27,6 +27,8 @@ final class ServiceAdmin extends AbstractAdmin
 			->add('id')
 			->add('descriptionFr')
 			->add('descriptionEn')
+            ->add('banniere')
+            ->add('image')
 			->add('_action', null, [
                 'actions' => [
                     'show' => [],

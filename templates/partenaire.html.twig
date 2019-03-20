@@ -4,7 +4,8 @@
         <div class="owl-carousel owl-theme clients" id="clients">
             {% for partenaire in partenaires %}
             <div class="item">
-                {% media partenaire.image, 'big' %}
+                <img src="{% path partenaire.image, 'big' %}" alt="{{ partenaire.nom }}">
+
             </div>
 
             {% endfor %}

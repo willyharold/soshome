@@ -18,8 +18,8 @@
         <div class="container">
             <h1>Service Detail</h1>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="service-detail.html">Service Detail</a></li>
+                <li><a href="{{ path('index') }}">Home</a></li>
+                <li><a href="{{ path('service') }}">Service Detail</a></li>
             </ul>
         </div>
     </div>
@@ -69,14 +69,9 @@
                 <!-- Right Side START -->
                 <div class="col-md-9 col-sm-8 col-xs-12">
                     <div class="services-single-right">
-                         {% media service.image, 'image' %}
+                        <img src="{% path service.image, 'image' %}" alt="" style="height: 456px !important; ">
                         <div class="text-content-big mt-20">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>{{ service.descriptionFr}}</p>
                         </div>
                         
 {% endfor %}
@@ -191,36 +186,7 @@
 
 
     <!-- Clients Carousel START -->
-    <div class="section-clients-grey border-top">
-        <div class="container">
-            <div class="owl-carousel owl-theme clients" id="clients">
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-
-                <div class="item">
-                    <img src="http://via.placeholder.com/158x58" alt="partner-image">
-                </div>
-            </div>
-           
-        </div>
-    </div>
+    {{ render(controller('App\\Controller\\IndexController::partenaire')) }}
     <!-- Clients Carousel END -->
 
     {{ render(controller('App\\Controller\\IndexController::footer')) }}
