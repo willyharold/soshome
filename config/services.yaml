@@ -85,3 +85,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Service }
         public: true
+
+    admin.about:
+        class: App\Admin\AboutAdmin
+        arguments: [~, App\Entity\About, App\Controller\AboutAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: About }
+        public: true

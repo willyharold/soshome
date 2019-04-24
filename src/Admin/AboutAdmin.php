@@ -8,22 +8,16 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\MediaBundle\Form\Type\MediaType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TelType;
 
-final class ContactAdmin extends AbstractAdmin
+final class AboutAdmin extends AbstractAdmin
 {
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
 			->add('id')
-			->add('telephone')
-			->add('email')
-			->add('adresse')
-			->add('live_chat')
-			->add('latitude')
-			->add('longitude')
+			->add('descriptionEN')
+			->add('descriptionFR')
 			;
     }
 
@@ -31,13 +25,13 @@ final class ContactAdmin extends AbstractAdmin
     {
         $listMapper
 			->add('id')
-			->add('telephone')
-			->add('email')
-			->add('adresse')
-			->add('live_chat')
-			->add('latitude')
-			->add('longitude')
-            ->add('baniere')
+			->add('descriptionEN')
+			->add('descriptionFR')
+            ->add('banniere1')
+            ->add('banniere2')
+            ->add('banniere3')
+
+
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -50,13 +44,11 @@ final class ContactAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-			->add('telephone')
-			->add('email',EmailType::class)
-			->add('adresse')
-			->add('live_chat')
-			->add('latitude')
-			->add('longitude')
-            ->add('baniere',MediaType::class,["context"=>"banauxi","provider"=>"sonata.media.provider.image"])
+			->add('descriptionEN')
+			->add('descriptionFR')
+            ->add('banniere1',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
+            ->add('banniere2',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
+            ->add('banniere3',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
 
         ;
     }
@@ -65,14 +57,8 @@ final class ContactAdmin extends AbstractAdmin
     {
         $showMapper
 			->add('id')
-			->add('telephone')
-			->add('email')
-			->add('adresse')
-			->add('live_chat')
-			->add('latitude')
-			->add('longitude')
-            ->add('baniere')
-
-        ;
+			->add('descriptionEN')
+			->add('descriptionFR')
+			;
     }
 }

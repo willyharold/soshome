@@ -17,6 +17,7 @@ sonata_admin:
                     - admin.message
                     - admin.equipe
                     - admin.service
+                    - admin.about
 
 
 
