@@ -78,7 +78,6 @@
                             </div>
 
                         </div>
-     {% endfor %}
 
 
                     <div class="row mt-50">
@@ -100,8 +99,11 @@
                 {{ form_widget(form.email) }}
             </div>
 
-            <div class="col-md-12">
-                {{ form_widget(form.objet) }}
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ form_widget(form.telephone) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ form_widget(form.quartier) }}
             </div>
 
             <div class="col-md-12">
@@ -118,9 +120,10 @@
         </div>
     </div>
 
-    </div>
-                    
-                    
+                    </div>
+
+             {% endfor %}
+
                 </div>
                 <!-- Right Side END -->
             </div>
