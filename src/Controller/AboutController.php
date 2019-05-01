@@ -14,8 +14,11 @@ class AboutController extends Controller
     {
          $em = $this->getDoctrine()->getManager();
          $equipes = $em->getRepository('App:Equipe')->findAll();
+         $abouts = $em->getRepository('App:About')->findAll();
+
         return $this->render('about/index.html.twig', [
-            "equipes"=> $equipes
+            "equipes"=> $equipes,
+            "abouts"=> $abouts
         ]);
     }
 }

@@ -10,11 +10,11 @@
     <!-- Preloader End ici qu'il faut rajouter le menu -->
 
     {{ render(controller('App\\Controller\\IndexController::menu')) }}
-  {% for propos in propos %}
+  {% for about in abouts %}
     <!-- Page Title START -->
-    <div class="page-title-section" style="background-image: url({% path propos.banniere, 'banniere' %});">
+    <div class="page-title-section" style="background-image: url({% path about.banniere1, 'big' %});">
         <div class="container">
-            <h1>A propos de nous</h1>
+            <h1>{{ 'A propos de nous' | trans }}</h1>
             <ul>
                 <li><a href="{{ path('index') }}">{{ "Accueil" | trans }}</a></li>
                 <li><a href="{{ path('about') }}">{{ "A propos" | trans }}</a></li>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    {% media propos.photo, 'photo' %}
+                    <img src="{% path about.banniere2, 'photo' %}" >
                 </div>
             </div>
         </div>
@@ -61,7 +61,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    {% media propos.image, 'image' %}
+                    <img src="{% path about.banniere3, 'image' %}" >
+
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-1">
                     <div class="section-heading">

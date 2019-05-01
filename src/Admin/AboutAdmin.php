@@ -46,9 +46,9 @@ final class AboutAdmin extends AbstractAdmin
         $formMapper
 			->add('descriptionEN')
 			->add('descriptionFR')
-            ->add('banniere1',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
-            ->add('banniere2',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
-            ->add('banniere3',MediaType::class,["context"=>"accueil","provider"=>"sonata.media.provider.image"])
+            ->add('banniere1',MediaType::class,["context"=>"banauxi","provider"=>"sonata.media.provider.image"])
+            ->add('banniere2',MediaType::class,["context"=>"propos","provider"=>"sonata.media.provider.image"])
+            ->add('banniere3',MediaType::class,["context"=>"propos","provider"=>"sonata.media.provider.image"])
 
         ;
     }
