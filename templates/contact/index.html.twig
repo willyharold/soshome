@@ -15,7 +15,7 @@
        {% for contact in contacts %}
     <div class="page-title-section" style="background-image: url({% path contact.baniere, 'big' %});">
         <div class="container">
-            <h1>Contact</h1>
+            <h1>{{ 'Contact' | trnas }}</h1>
             <ul>
                 <li><a href="{{ path('index') }}">{{ "Home" | trans }} </a></li>
                 <li><a href="{{ path('contact') }}">{{ "Contact" | trans }}</a></li>

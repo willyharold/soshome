@@ -29,12 +29,22 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
                         
                         <div class="center-holder">
-                            <h2>
-                               {{accueil.titreFr}}
-                            </h2>
-                            <p>
-                                {{accueil.descriptionFr}}
-                            </p>
+                            {% if locale == 'fr' %}
+                                <h2>
+                                    {{accueil.titreFr}}
+                                </h2>
+                                <p>
+                                    {{accueil.descriptionFr}}
+                                </p>
+                            {% else %}
+                                <h2>
+                                    {{accueil.titreEn}}
+                                </h2>
+                                <p>
+                                    {{accueil.descriptionEn}}
+                                </p>
+                            {% endif %}
+
                             <div class="mt-30">
                                 <a href="{{ path('service') }}" class="primary-button button-md">{{ "En savoir plus" | trans }}</a>
                             </div>
@@ -106,10 +116,7 @@
                     </div>
                     <div class="mt-25">
                         <ul class="primary-list">
-                            <li><i class="fa fa-check-square"></i> {{ "Immigration consultant, Information technology consulting" | trans }}</li>
-                            <li><i class="fa fa-check-square"></i> {{ "Consultant pharmacist Creative consultant" | trans }}</li>
-                            <li><i class="fa fa-check-square"></i> {{ "Employment consultant Environmental consultant" | trans }}</li>
-                        </ul>
+                             </ul>
                     </div>
                     <div class="mt-35">
                         <a href="{{ path('about') }}" class="primary-button button-md">{{ "En savoir plus" | trans }}</a>

@@ -5,7 +5,7 @@
         <div class="row">
             <!-- Column 1 Start -->
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <h3>A propos de nous</h3>
+                <h3>{{ 'A propos de nous' | trans }}</h3>
                 <div class="mt-25">
                     <img src="{{ asset('assets/img/logos/logo.png') }}" width="200px" alt="footer-logo">
                     <div class="footer-social-icons mt-25">
@@ -23,14 +23,14 @@
 
             <!-- Column 2 Start -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <h3>Liens rapides</h3>
+                <h3>{{ 'Liens rapides' | trans }}</h3>
                 <ul class="footer-list">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Brand Ambassador</a></li>
-                    <li><a href="#">A propos</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Connexion</a></li>
+                    <li><a href="{{ path('index') }}">{{ 'Accueil' | trans }}</a></li>
+                    <li><a href="{{ path('service') }}">{{ 'Service' | trans }}</a></li>
+                    <li><a href="{{ path('brand') }}">{{ 'Brand Ambassador' | trans }}</a></li>
+                    <li><a href="{{ path('about') }}">{{ 'A propos' | trans }}</a></li>
+                    <li><a href="{{ path('contact') }}">{{ 'Contact' | trans }}</a></li>
+                    <li><a href="http://vps625451.ovh.net:8080/easyprotect/home">{{ 'Connexion' | trans }}</a></li>
                 </ul>
             </div>
             <!-- Column 2 End -->
@@ -38,41 +38,6 @@
             <!-- Column 3 Start -->
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <h3>Actualités du blog</h3>
-                <div class="mt-25">
-                    <!-- Post Start -->
-                    <div class="footer-recent-post clearfix">
-                        <div class="footer-recent-post-thumb">
-                            <img src="http://via.placeholder.com/66x66" alt="img">
-                        </div>
-                        <div class="footer-recent-post-content">
-                            <span>February 7, 2018</span>
-                            <a href="#">Comment noter un artisant </a>
-                        </div>
-                    </div>
-                    <!-- Post End -->
-                    <!-- Post Start -->
-                    <div class="footer-recent-post clearfix">
-                        <div class="footer-recent-post-thumb">
-                            <img src="http://via.placeholder.com/66x66" alt="img">
-                        </div>
-                        <div class="footer-recent-post-content">
-                            <span>February 7, 2018</span>
-                            <a href="#"> Problème avec un artisant</a>
-                        </div>
-                    </div>
-                    <!-- Post End -->
-                    <!-- Post Start -->
-                    <div class="footer-recent-post clearfix">
-                        <div class="footer-recent-post-thumb">
-                            <img src="http://via.placeholder.com/66x66" alt="img">
-                        </div>
-                        <div class="footer-recent-post-content">
-                            <span>February 7, 2018</span>
-                            <a href="#">Comment déposer une plainte.</a>
-                        </div>
-                    </div>
-                    <!-- Post End -->
-                </div>
             </div>
             <!-- Column 3 End -->
 
@@ -80,18 +45,7 @@
             <div class="col-md-2 col-sm-6 col-xs-12">
                 <h3>Tags</h3>
                 <div class="footer-tags mt-25">
-                    <a href="#">Business</a>
-                    <a href="#">Conusltant</a>
-                    <a href="#">Coach</a>
-                    <a href="#">UX</a>
-                    <a href="#">API</a>
-                    <a href="#">Reputation</a>
-                    <a href="#">Research</a>
-                    <a href="#">Sale</a>
-                    <a href="#">Service</a>
-                    <a href="#">UI</a>
-                    <a href="#">Web</a>
-                    <a href="#">WebDesign</a>
+
                 </div>
             </div>
             <!-- Column 4 End -->
