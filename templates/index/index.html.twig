@@ -168,11 +168,11 @@
                         <h4>  {{ "S'inscrire a notre newsletter" | trans }} </h4>
                     </div>
                     <div class="modal-body">
-                        <p>{{ "Signup for our weekly newsletter to get the latest news, updates and amazing offers delivered directly in your inbox." | trans }}</p>
-                        <form action="/examples/actions/confirmation.php" method="post" class="contact-form">
+                        <p>{{ "Abonnez-vous à chaque newsletter pour rester connecté à l'actualité !" | trans }}</p>
+                        {{ form_start(form,{'attr' :  {'class': 'contact-form'}}) }}
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="email" class="form-control" placeholder="Email" required>
+                                {{ form_widget(form.email,{'attr' :  {'class': 'form-control','placeholder':'Email'}}) }}
 
                             </div>
 
@@ -182,8 +182,7 @@
                                 </div>
                             </div>
                         </div>
-
-                        </form>
+                        {{ form_end(form) }}
                     </div>
 
             </div>
@@ -200,9 +199,11 @@
 
 {% block script %}
 
-    <script type="text/javascript">
+    {% if not app.session.get('newsletter') %}
+    <script>
         $(document).ready(function(){
             $("#myModal").modal('show');
         });
     </script>
+    {% endif %}
 {% endblock %}

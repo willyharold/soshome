@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+{% set locale = app.request.locale %}
+{% block body %}
+    <!-- Preloader Start-->
+    <div id="preloader">
+        <div class="row loader">
+            <div class="loader-icon"></div>
+        </div>
+    </div>
+    <!-- Preloader End ici qu'il faut rajouter le menu -->
+
+    {{ render(controller('App\\Controller\\IndexController::menu')) }}
+
+
+    <!-- Page Title START -->
+     {% for brand in brands %}
+    <div class="page-title-section" style="background-image: url({% path brand.banniere, 'banniere' %});">
+        <div class="container">
+            <h1>Brand Ambassador</h1>
+            <ul>
+                <li><a href="{{ path('index') }}">{{ "Home" | trans }}</a></li>
+                <li><a href="{{ path('service') }}">{{ "Brand Ambassador" | trans }}</a></li>
+            </ul>
+        </div>
+    </div>
+        
+    <!-- Page Title END -->
+
+
+
+
+    <!-- Service Single START -->
+    <div class="section-block">
+        <div class="container">
+            <div class="row">
+                <!-- Left Side START -->
+                 <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="services-single-left-box">
+
+                        <!-- Vertical Menu START -->
+                        
+                        <!-- Vertical Menu END -->
+
+                        <div class="services-single-left-heading mt-40">
+                            <h4>{{ "Need Help ?" | trans }}</h4>
+                        </div>
+                        {% for contact in contacts %}
+                        <ul class="primary-list mt-30">
+                            <li><i class="fa fa-globe"></i>{{contact.adresse}}</li>
+                            <li><i class="fa fa-phone"></i>{{contact.telephone}}</li>
+                            <li><i class="fa fa-envelope-open"></i>{{contact.email}}</li>
+                        </ul>
+                      {% endfor %}
+                    </div>
+                </div>
+                <!-- Left Side END -->
+
+                <!-- Right Side START -->
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <div class="services-single-right">
+                        <img src="{% path brand.image, 'image' %}" alt="" style="height: 456px !important; ">
+                        <div class="text-content-big mt-20">
+                        </div>
+                        
+                        <div class="row mt-30">
+                            <div class="col-md-12">
+                                <div class="pr-15-md">
+                                    <div class="section-single-heading">
+                                        <h4>{{ "Présentation de Brand Ambassador" | trans }}</h4>
+                                    </div>
+                                    {% if locale == 'fr' %}
+                                        <p class="text-justify">{{ brand.descriptionFr}}</p>
+                                    {% else %}
+                                        <p class="text-justify">{{ brand.descriptionEn}}</p>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                        </div>
+     {% endfor %}
+
+
+                    <div class="row mt-50">
+        {% for flashMessage in app.session.flashbag.get('message') %}
+
+            <div class="alert alert-success" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        <div class="contact-form-box">
+            <!-- Form Start -->
+
+            {{ form_start(form,{'attr' :  {'class': 'contact-form'}} ) }}
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ form_widget(form.nom) }}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                {{ form_widget(form.email) }}
+            </div>
+
+            <div class="col-md-12">
+                {{ form_widget(form.objet) }}
+            </div>
+
+            <div class="col-md-12">
+                {{ form_widget(form.description) }}
+            </div>
+            <div class="col-md-12">
+                <div class="center-holder">
+                    <button type="submit">{{ "Envoyer Message" | trans }}</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+            <!-- Form End -->
+        </div>
+    </div>
+
+    </div>
+                    
+                    
+                </div>
+                <!-- Right Side END -->
+            </div>
+        </div>
+    </div>
+    <!-- Service Single END -->
+
+
+
+
+
+    <!-- Clients Carousel START -->
+    {{ render(controller('App\\Controller\\IndexController::partenaire')) }}
+    <!-- Clients Carousel END -->
+
+    {{ render(controller('App\\Controller\\IndexController::footer')) }}
+
+{% endblock %}
