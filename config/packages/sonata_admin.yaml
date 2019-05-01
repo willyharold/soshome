@@ -18,6 +18,8 @@ sonata_admin:
                     - admin.equipe
                     - admin.service
                     - admin.about
+                    - admin.brand_ambassador
+                    - admin.brand
 
 
 

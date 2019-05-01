@@ -96,3 +96,17 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: About }
         public: true
+
+    admin.brand_ambassador:
+        class: App\Admin\BrandAmbassadorAdmin
+        arguments: [~, App\Entity\BrandAmbassador, App\Controller\BrandAmbassadorAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: BrandAmbassador }
+        public: true
+
+    admin.brand:
+        class: App\Admin\BrandAdmin
+        arguments: [~, App\Entity\Brand, App\Controller\BrandAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Brand }
+        public: true
