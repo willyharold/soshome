@@ -58,6 +58,13 @@ sonata_media:
             formats:
                 banniere: { width: 1520 , height: 290 , quality: 70, }
                 image: { width: 847 , height: 456 , quality: 70,  }
+                
+        propos:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                photo: { width: 555 , height: 370 , quality: 70, }
+                image: { width: 555 , height: 277 , quality: 70,  }
 
     cdn:
         server:
