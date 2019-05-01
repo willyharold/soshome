@@ -16,8 +16,8 @@
         <div class="container">
             <h1>A propos de nous</h1>
             <ul>
-                <li><a href="{{ path('index') }}">Accueil</a></li>
-                <li><a href="{{ path('about') }}">A propos</a></li>
+                <li><a href="{{ path('index') }}">{{ "Accueil" | trans }}</a></li>
+                <li><a href="{{ path('about') }}">{{ "A propos" | trans }}</a></li>
             </ul>
         </div>
     </div>
@@ -37,14 +37,14 @@
                         </div>
                         <div class="section-heading-line-left"></div>
                         <div class="text-content-big mt-20 text-justify">
-                            <p>c'est le fruit de la croisée entre une ambition locale et un désir réel d'une jeunesse camerounaise pour soutenir, réaliser et apporter sa pierre a l'édifice de l'essort économique de notre pays le Cameroun.</p>
+                        <p>{{ "c'est le fruit de la croisée entre une ambition locale et un désir réel d'une jeunesse camerounaise pour soutenir, réaliser et apporter sa pierre a l'édifice de l'essort économique de notre pays le Cameroun." | trans }}</p>
                         </div>
                         <div class="mt-20">
                             <ul class="primary-list">
-                                <li><i class="fa fa-check-square"></i>Immigration consultant, Information technology consulting</li>
-                                <li><i class="fa fa-check-square"></i>Consultant pharmacist Creative consultant</li>
-                                <li><i class="fa fa-check-square"></i>Employment consultant Environmental consultant</li>
-                                <li><i class="fa fa-check-square"></i>Independent contractor, Permatemp</li>
+                                <li><i class="fa fa-check-square"></i>{{ "Immigration consultant, Information technology consulting" | trans }}</li>
+                                <li><i class="fa fa-check-square"></i>{{ "Consultant pharmacist Creative consultant" | trans }}</li>
+                                <li><i class="fa fa-check-square"></i>{{ "Employment consultant Environmental consultant" | trans }}</li>
+                                <li><i class="fa fa-check-square"></i>{{ "Independent contractor, Permatemp" | trans }}</li>
                             </ul>
                         </div>
                     </div>
@@ -69,11 +69,11 @@
                 </div>
                 <div class="col-md-5 col-sm-6 col-xs-12 col-md-offset-1">
                     <div class="section-heading">
-                        <h5>Nous somme disponible à l'international</h5>
+                        <h5>{{ "Nous somme disponible à l'international" | trans }}</h5>
                         <div class="section-heading-line-left"></div>
                     </div>
                     <div class="text-content mt-25">
-                        <p>SOS HOME & PARTNERS est disponible dans plusieurs pays à savoir France, Turkie, Suisse et dans la zone CEMAC</p>
+                        <p>{{ "SOS HOME & PARTNERS est disponible dans plusieurs pays à savoir France, Turkie, Suisse et dans la zone CEMAC" | trans }}</p>
                     </div>
                     <div class="mt-25">
                         <a href="{{ path('contact') }}" class="primary-button button-sm">Nous contacté</a>
@@ -92,8 +92,8 @@
     <div class="section-block-grey">
         <div class="container">
             <div class="section-heading center-holder">
-                <span>Rencontrez notre équipe</span>
-                <h3>Nous sommes une équipe de professionnels</h3>
+                <span>{{ "Rencontrez notre équipe" | trans }}</span>
+                <h3>{{ "Nous sommes une équipe de professionnels" | trans }}</h3>
                 <div class="section-heading-line"></div>
             </div>
 

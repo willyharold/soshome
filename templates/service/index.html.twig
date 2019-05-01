@@ -16,10 +16,10 @@
      {% for service in services %}
     <div class="page-title-section" style="background-image: url({% path service.banniere, 'banniere' %});">
         <div class="container">
-            <h1>Service Detail</h1>
+            <h1>Easy Protect</h1>
             <ul>
-                <li><a href="{{ path('index') }}">Home</a></li>
-                <li><a href="{{ path('service') }}">Service Detail</a></li>
+                <li><a href="{{ path('index') }}">{{ "Home" | trans }}</a></li>
+                <li><a href="{{ path('service') }}">{{ "Easy Protect" | trans }}</a></li>
             </ul>
         </div>
     </div>
@@ -42,26 +42,15 @@
                         <!-- Vertical Menu END -->
 
                         <div class="services-single-left-heading mt-40">
-                            <h4>Need Help ?</h4>
+                            <h4>{{ "Need Help ?" | trans }}</h4>
                         </div>
+                        {% for contact in contacts %}
                         <ul class="primary-list mt-30">
-                            <li><i class="fa fa-globe"></i>Street Sheram 113/11 9007</li>
-                            <li><i class="fa fa-phone"></i>(+123) 123-456-789</li>
-                            <li><i class="fa fa-envelope-open"></i>SpecThemes@gmail.com</li>
+                            <li><i class="fa fa-globe"></i>{{contact.adresse}}</li>
+                            <li><i class="fa fa-phone"></i>{{contact.telephone}}</li>
+                            <li><i class="fa fa-envelope-open"></i>{{contact.email}}</li>
                         </ul>
-
-                        <!-- Callback START -->
-                        <div class="callback-box mt-30">
-                            <div class="services-single-left-heading">
-                                <h4>Request a Callback</h4>
-                            </div>
-                            <form method="get" action="#" class="callback-box-form mt-20">
-                                <input type="text" name="name" placeholder="Your Name">
-                                <input type="text" name="phone" placeholder="Phone Number">
-                                <button type="submit">Request</button>
-                            </form>
-                        </div>
-                        <!-- Callback END -->
+                      {% endfor %}
                     </div>
                 </div>
                 <!-- Left Side END -->
@@ -71,105 +60,58 @@
                     <div class="services-single-right">
                         <img src="{% path service.image, 'image' %}" alt="" style="height: 456px !important; ">
                         <div class="text-content-big mt-20">
-                            <p>{{ service.descriptionFr}}</p>
                         </div>
                         
-{% endfor %}
                         <div class="row mt-30">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="col-md-12">
                                 <div class="pr-15-md">
                                     <div class="section-single-heading">
-                                        <h4>Financial Planning Strategies</h4>
+                                        <h4>{{ "Présentation de Easy Protect" | trans }}</h4>
                                     </div>
-                                    <ul class="primary-list mt-35">
-                                        <li><i class="fa fa-check"></i>Foreclosure consultant Human resource consulting</li>
-                                        <li><i class="fa fa-check"></i>Employment consultant Environmental consultant</li>
-                                        <li><i class="fa fa-check"></i>Immigration consultant, Information consulting</li>
-                                        <li><i class="fa fa-check"></i>Consultant pharmacist Creative consultant</li>
-                                    </ul>
+                                    <p class="text-justify">{{ service.descriptionFr}}</p>
+
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <div class="section-single-heading">
-                                    <h4>Analyze Your Business</h4>
-                                </div>
-                                <!-- Pie Chart START -->
-                                <canvas id="chart-area"  class="chartjs-render-monitor"></canvas>
-                                <!-- Pie Chart END -->
-                            </div>
                         </div>
+     {% endfor %}
 
-                        <!-- Accordions START -->
+
+    <!-- Accordions START -->
                         <div class="panel-group mt-20" id="accordion" role="tablist" aria-multiselectable="true">
 
                             <div class="panel panel-default accordion">
                                 <div class="panel-heading accordion-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title accordion-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Where can I get access to Capital IQ?
+                                            Avantage
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                                     <div class="panel-body accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                                        <ul class="primary-list">
+                                            <li><i class="fa fa-check-square"></i> {{ "En raison de son impact social, il est accessible au grand public au prix de 1000 F via notre application EASY PROTECT disponible en libre téléchargement sur Google Play store" | trans }}</li>
+                                            <li><i class="fa fa-check-square"></i> {{ "Utilisation facile" | trans }}</li>
+                                            <li><i class="fa fa-check-square"></i> {{ "Configuration simple" | trans }}</li>
+                                            <li><i class="fa fa-check-square"></i> {{ "Accessibilité en temps réel de votre domicile" | trans }}</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="panel panel-default accordion">
-                                <div class="panel-heading accordion-heading" role="tab" id="headingTwo">
-                                    <h4 class="panel-title accordion-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Where can I find market research reports?
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                    <div class="panel-body accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="panel panel-default accordion">
-                                <div class="panel-heading accordion-heading" role="tab" id="headingThree">
-                                    <h4 class="panel-title accordion-title">
-                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                            How do I get access to case studies?
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                    <div class="panel-body accordion-body">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- Accordions END -->
 
                         <!-- Download Button START -->
                         <a href="#">
                             <div class="download-file-button clearfix">
-                                <h5>Download Our Services file <span>(zip)</span></h5>
-                                <i class="fa fa-file-word-o"></i>
+                                <h5>{{ "Télécharger l'application" | trans }} <span>(apk)</span></h5>
+                                <i class="fa fa-file-zip-o"></i>
                             </div>
                         </a>
                         <!-- Download Button END -->
-
-                        <div class="section-single-heading mt-50">
-                            <h4>About Our Company</h4>
-                        </div>
-                        <div class="text-content-big mt-15">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
 
                     </div>
                     

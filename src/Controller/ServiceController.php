@@ -14,9 +14,12 @@ class ServiceController extends Controller
     {
          $em = $this->getDoctrine()->getManager();
          $services = $em->getRepository('App:Service')->findAll();
+         $contacts = $em->getRepository('App:Contact')->findAll();
+
         return $this->render('service/index.html.twig', [
             'controller_name' => 'ServiceController',
-             "services"=> $services
+             "services"=> $services,
+             "contacts"=> $contacts
         ]);
     }
 }

@@ -17,8 +17,8 @@
         <div class="container">
             <h1>Contact</h1>
             <ul>
-                <li><a href="{{ path('index') }}">Home</a></li>
-                <li><a href="{{ path('contact') }}">Contact</a></li>
+                <li><a href="{{ path('index') }}">{{ "Home" | trans }} </a></li>
+                <li><a href="{{ path('contact') }}">{{ "Contact" | trans }}</a></li>
             </ul>
         </div>
     </div>
@@ -33,28 +33,28 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-phone-square"></i>
-                        <h4>Contactez-nous</h4>
+                        <h4>{{ "Contactez-nous" | trans }}</h4>
                         <span>{{contact.telephone}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-map"></i>
-                        <h4>Visitez-nous</h4>
+                        <h4>{{ "Visitez-nous" | trans }}</h4>
                         <span>{{contact.adresse}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-envelope"></i>
-                        <h4>Ecrivez-nous</h4>
+                        <h4>{{ "Ecrivez-nous" | trans }}</h4>
                         <span>{{contact.email}}</span>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="contact-box">
                         <i class="fa fa-comments-o"></i>
-                        <h4>chat en direct</h4>
+                        <h4>{{ "chat en direct" | trans }}</h4>
                         <span>{{contact.liveChat}}</span>
                     </div>
                 </div>
@@ -70,8 +70,8 @@
     <div class="section-block">
         <div class="container">
             <div class="section-heading center-holder">
-                <span>Entrer en contact</span>
-                <h3>Parlons de votre entreprise</h3>
+                <span>{{ "Entrer en contact" | trans }}</span>
+                <h3>{{ "Parlons de votre entreprise" | trans }}</h3>
                 <div class="section-heading-line"></div>
 
             </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="center-holder">
-                                <button type="submit">Envoyer Message</button>
+                                <button type="submit">{{ "Envoyer Message" | trans }}</button>
                             </div>
                         </div>
                          {{ form_end(form) }}
