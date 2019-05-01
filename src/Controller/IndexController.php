@@ -66,6 +66,17 @@ class IndexController extends Controller
 
         return $this->render('partenaire.html.twig',["partenaires"=> $partenaires]);
     }
+    
+      public function propos()
+
+    {
+        $em = $this->getDoctrine()->getManager();
+        $propos = $em->getRepository('App:Propos')->findAll();
+        
+
+        return $this->render('about/index.html.twig',["propos"=> $propos]);
+    }
+
 
     /**
      * @Route("/changelocale/{id}", name="changelocale")

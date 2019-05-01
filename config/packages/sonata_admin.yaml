@@ -20,6 +20,7 @@ sonata_admin:
                     - admin.about
                     - admin.brand_ambassador
                     - admin.brand
+                    - admin.propos
 
 
 
