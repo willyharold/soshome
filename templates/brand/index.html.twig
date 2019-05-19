@@ -81,12 +81,20 @@
 
 
                     <div class="row mt-50">
-        {% for flashMessage in app.session.flashbag.get('message') %}
+                        <div class="col-md-12">
+                            <div class="pr-15-md">
+                                <div class="section-single-heading">
+                                    <h4>{{ "Dévenir Brand Ambassador" | trans }}</h4>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="alert alert-success" role="alert">
-                {{ flashMessage }}
-            </div>
-        {% endfor %}
+                        {% for flashMessage in app.session.flashbag.get('message') %}
+
+                            <div class="alert alert-success" role="alert">
+                                {{ flashMessage }}
+                            </div>
+                        {% endfor %}
         <div class="contact-form-box">
             <!-- Form Start -->
 

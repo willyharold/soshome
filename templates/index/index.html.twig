@@ -110,8 +110,8 @@
                         <h4>{{ "SOS HOME & PARTNERS" | trans }}</h4>
                         <div class="section-heading-line-left"></div>
                     </div>
-                    <div class="text-content-big mt-20">
-                        <p>{{ "c'est le fruit de la croisée entre une ambition locale et un désir réel d'une jeunesse camerounaise pour soutenir, réaliser et apporter sa pierre a l'édifice de l'essort économique de notre pays le Cameroun." | trans }}</p>
+                    <div class="text-content-big mt-20" >
+                        <p style="color: black !important;">{{ "c'est le fruit de la croisée entre une ambition locale et un désir réel d'une jeunesse camerounaise pour soutenir, réaliser et apporter sa pierre a l'édifice de l'essort économique de notre pays le Cameroun." | trans }}</p>
 
                     </div>
                     <div class="mt-25">
@@ -140,8 +140,9 @@
                 <div class="section-heading-line"></div>
             </div>
             <div class="owl-carousel owl-theme mt-30" id="testmonial-item">
+                {% for temoignage in temoignages %}
+
                 <div class="testmonial-item">
-                    {% for temoignage in temoignages %}
                     <div class="testmonial-item-bxx">
                         <p> {{temoignage.descriptionFr}}</p>
                         <div class="testmonial-arrow"> </div>
@@ -155,8 +156,8 @@
                             <span>{{temoignage.titreFr}}</span>
                         </div>
                     </div>
-                      {% endfor %}
                 </div>
+                {% endfor %}
 
               
 
