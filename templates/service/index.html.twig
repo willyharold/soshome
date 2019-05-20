@@ -68,7 +68,12 @@
                                     <div class="section-single-heading">
                                         <h4>{{ "Présentation de Easy Protect" | trans }}</h4>
                                     </div>
-                                    <p class="text-justify">{{ service.descriptionFr}}</p>
+                                    {% if locale == 'fr' %}
+                                        <p class="text-justify">{{ service.descriptionFr}}</p>
+                                    {% else %}
+                                        <p class="text-justify">{{ service.descriptionEn}}</p>
+                                    {% endif %}
+
 
                                 </div>
                             </div>

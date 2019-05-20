@@ -142,21 +142,41 @@
             <div class="owl-carousel owl-theme mt-30" id="testmonial-item">
                 {% for temoignage in temoignages %}
 
-                <div class="testmonial-item">
-                    <div class="testmonial-item-bxx">
-                        <p> {{temoignage.descriptionFr}}</p>
-                        <div class="testmonial-arrow"> </div>
-                    </div>
-                    <div class="testmonial-item-bxx-img">
-                        <div class="testmonial-item-img">
-                                {% media temoignage.image, 'big' %}
+                    {% if locale == 'fr' %}
+                        <div class="testmonial-item">
+                            <div class="testmonial-item-bxx">
+                                <p> {{temoignage.descriptionFr}}</p>
+                                <div class="testmonial-arrow"> </div>
+                            </div>
+                            <div class="testmonial-item-bxx-img">
+                                <div class="testmonial-item-img">
+                                    {% media temoignage.image, 'big' %}
+                                </div>
+                                <div class="testmonial-item-name">
+                                    <h4>{{temoignage.nom}}</h4>
+                                    <span>{{temoignage.titreFr}}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="testmonial-item-name">
-                            <h4>{{temoignage.nom}}</h4>
-                            <span>{{temoignage.titreFr}}</span>
+                    {% else %}
+                        <div class="testmonial-item">
+                            <div class="testmonial-item-bxx">
+                                <p> {{temoignage.descriptionEn}}</p>
+                                <div class="testmonial-arrow"> </div>
+                            </div>
+                            <div class="testmonial-item-bxx-img">
+                                <div class="testmonial-item-img">
+                                    {% media temoignage.image, 'big' %}
+                                </div>
+                                <div class="testmonial-item-name">
+                                    <h4>{{temoignage.nom}}</h4>
+                                    <span>{{temoignage.TitreEn}}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    {% endif %}
+
+
                 {% endfor %}
 
               

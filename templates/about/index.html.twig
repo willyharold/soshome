@@ -37,7 +37,11 @@
                         </div>
                         <div class="section-heading-line-left"></div>
                         <div class="text-content-big mt-20 text-justify">
-                        <p>{{ "c'est le fruit de la croisée entre une ambition locale et un désir réel d'une jeunesse camerounaise pour soutenir, réaliser et apporter sa pierre a l'édifice de l'essort économique de notre pays le Cameroun." | trans }}</p>
+                            {% if locale == 'fr' %}
+                                <p class="text-justify">{{ about.descriptionFr}}</p>
+                            {% else %}
+                                <p class="text-justify">{{ about.descriptionEn}}</p>
+                            {% endif %}
                         </div>
                         <div class="mt-20">
                             <ul class="primary-list">

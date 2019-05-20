@@ -5,9 +5,7 @@ sonata_media:
         gallery: App\Application\Sonata\MediaBundle\Entity\Gallery
         gallery_has_media: App\Application\Sonata\MediaBundle\Entity\GalleryHasMedia
     default_context: default
-    providers:
-        image:
-            resizer: sonata.media.resizer.square
+
     contexts:
         default:
             providers:
