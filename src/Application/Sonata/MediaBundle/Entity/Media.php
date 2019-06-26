@@ -2,15 +2,6 @@
 
 namespace App\Application\Sonata\MediaBundle\Entity;
 
-use App\Entity\About;
-use App\Entity\Accueil;
-use App\Entity\Brand;
-use App\Entity\Contact;
-use App\Entity\Equipe;
-use App\Entity\Partenaire;
-use App\Entity\Propos;
-use App\Entity\Service;
-use App\Entity\Temoignage;
 use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
 
 /**
@@ -28,15 +19,7 @@ class Media extends BaseMedia
      */
     protected $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Brand", mappedBy="banniere", cascade={"persist", "remove"})
-     */
-    private $brand;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Propos", mappedBy="image", cascade={"persist", "remove"})
-     */
-    private $propos;
 
     /**
      * Get id.
@@ -46,42 +29,6 @@ class Media extends BaseMedia
     public function getId()
     {
         return $this->id;
-    }
-
-    public function getBrand(): ?Brand
-    {
-        return $this->brand;
-    }
-
-    public function setBrand(?Brand $brand): self
-    {
-        $this->brand = $brand;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newBanniere = $brand === null ? null : $this;
-        if ($newBanniere !== $brand->getBanniere()) {
-            $brand->setBanniere($newBanniere);
-        }
-
-        return $this;
-    }
-
-    public function getPropos(): ?Propos
-    {
-        return $this->propos;
-    }
-
-    public function setPropos(?Propos $propos): self
-    {
-        $this->propos = $propos;
-
-        // set (or unset) the owning side of the relation if necessary
-        $newImage = $propos === null ? null : $this;
-        if ($newImage !== $propos->getImage()) {
-            $propos->setImage($newImage);
-        }
-
-        return $this;
     }
 
 }
